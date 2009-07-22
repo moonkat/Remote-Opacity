@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.livequery.js"></script>
+<script type="text/javascript" src="jquery.simplemodal.js"></script>
+<script type="text/javascript" src="remoteOpacity.js"></script>
+<script type="text/javascript" src="actions.js"></script>
+<style type="text/css">
+div {
+	float: left;
+	clear: left;
+	width: 500px;
+	margin-bottom: 5px;
+}
+input {
+	float: right;
+	width: 150px;
+}
+label {
+	display: block;
+	float: left;
+	width: auto;
+}
+</style>
+</head>
+<body>
+<p>Please answer the following questions:</p>
+<div id="div1" opacity="50">
+     <label>What's kind of animal do you prefer as a pet?</label>
+     <input type="text" id="pets" /><br />
+	<a href="#" actions="+div2">Next Question</a>
+</div>
+<div id="div2" opacity="50" hide="true">
+     <label>What's your favorite kind of pie?</label>
+     <input type="text" id="pie" /><br />
+	<a href="#" actions="+div3">Next Question</a>
+</div>
+<div id="div3" opacity="50" hide="true">
+     <label>If you could be any superhero, who would you be?</label>
+     <input type="text" id="superhero" />
+</div>
+</body>
+</html>
