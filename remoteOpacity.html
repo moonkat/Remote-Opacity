@@ -28,10 +28,10 @@ label {
 </head>
 <body>
 <p>Please answer the following questions:</p>
-<div id="div1" opacity="50">
+<div id="div1">
      <label>What's kind of animal do you prefer as a pet?</label>
      <input type="text" id="pets" /><br />
-	<a href="#" actions="+div2">Next Question</a>
+	<a href="#" actions="+div2" opacity="50" opacitytarget="div1">Next Question</a>
 </div>
 <div id="div2" opacity="50" hide="true">
      <label>What's your favorite kind of pie?</label>
@@ -40,7 +40,8 @@ label {
 </div>
 <div id="div3" opacity="50" hide="true">
      <label>If you could be any superhero, who would you be?</label>
-     <input type="text" id="superhero" />
+     <input type="text" id="superhero" /><br />
+     <p>Ideally, the tag slinger would be combined with this function to disable the completed fields.</p>
 </div>
 </body>
 </html>

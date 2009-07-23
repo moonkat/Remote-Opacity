@@ -27,15 +27,29 @@ $(document).ready(function(){
 	var opacitySelector 		= "[opacity]";
 	var opacityTag 			= "opacity";
 	var opacityTarget			= "[opacitytarget]";
-	if (opacityTarget) 
+	var opacityTargetTag		= "opacitytarget";
 	$(opacitySelector).livequery( function() {
-		try {
-			var op = ($(this).attr(opacityTag) || 50)/100;
-			$(this).fadeTo("fast", op);
-			//($.browser.msie) ? $(this).css("filter", "alpha(opacity="+op+")") : $(this).animate({ opacity: op }, 1000);
-		} catch(err) {
-			log(err);
-			log('Error thrown while trying to animate opacity.  Element::'+$(this).attr('id'));
+		var target = $(opacityTarget).attr(opacityTargetTag);
+		if ((opacityTag && opacityTargetTag)) {
+			try {
+				var op = ($(this).attr(opacityTag) || 50)/100;
+				$(this).click(function() {
+				$("#" + target).fadeTo("fast", op);
+				//($.browser.msie) ? $(this).css("filter", "alpha(opacity="+op+")") : $(this).animate({ opacity: op }, 1000);
+				});
+			} catch(err) {
+				log(err);
+				log('Error thrown while trying to animate opacity.  Element::'+$(this).attr('id'));
+			}
+		} else {
+			try {
+				var op = ($(this).attr(opacityTag) || 50)/100;
+				$(this).fadeTo("fast", op);
+				//($.browser.msie) ? $(this).css("filter", "alpha(opacity="+op+")") : $(this).animate({ opacity: op }, 1000);
+			} catch(err) {
+				log(err);
+				log('Error thrown while trying to animate opacity.  Element::'+$(this).attr('id'));
+			}
 		}
 	});
 });
